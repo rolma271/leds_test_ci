@@ -1,18 +1,31 @@
-# Template for C Projects
+# Trabajo Práctico Número 4
 
------
+## Uso del repositorio
 
-This repository is a template to be used in new projects developed in C language.
+Este repositorio utiliza [pre-commit](https://pre-commit.com) para validaciones de formato. Para trabajar con el mismo usted debería tener instalado:
 
-**Table of Contents**
+1. pre-commit (https://pre-commit.com/#install)
 
-- [How to use](#How-to-use)
-- [License](#license)
+Después de clonar el repositorio usted debería ejecutar el siguiente comando:
 
-## How to use
+```
+pre-commit install
+```
 
-When create a new repository on GitHub use this a start template to create it.
+Para generar la documentación del proyecto se utiliza el siguiente comando:
+
+```
+make doc
+
+```
+
+Para compilar el proyecto se utiliza el siguiente comando:
+
+```
+make all
+
+```
 
 ## License
 
-This template is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+This work is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
