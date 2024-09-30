@@ -21,7 +21,8 @@
  8 - Check if an LED is off
  9 - Check null port creation
  10 - Checking within boundaries
- 11 - Checking outside boundaries
+ 11 - Checking outside boundaries: leds on
+ 11 - Checking outside boundaries: leds off
  */
 
 static int16_t _port_virtual; /**< Simulated port for testing */
@@ -113,10 +114,18 @@ void test_leds_check_within_limits(void) {
     TEST_ASSERT_EQUAL_HEX16((1 << 0) | (1 << 15), _port_virtual);
 }
 
-// 11 - Test for checking outside boundaries
-void test_leds_check_outside_limits(void) {
+// 11 - Test for checking outside boundaries: on
+void test_leds_check_outside_limits_on(void) {
     TEST_ASSERT_FALSE(LEDs_SetOn(0));
     TEST_ASSERT_FALSE(LEDs_SetOn(17));
+
+    TEST_ASSERT_EQUAL_HEX16(0, _port_virtual);
+}
+
+// 11 - Test for checking outside boundaries: off
+void test_leds_check_outside_limits_off(void) {
+    TEST_ASSERT_FALSE(LEDs_SetOff(0));
+    TEST_ASSERT_FALSE(LEDs_SetOff(17));
 
     TEST_ASSERT_EQUAL_HEX16(0, _port_virtual);
 }
